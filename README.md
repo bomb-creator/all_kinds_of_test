@@ -1,51 +1,70 @@
-# 🎉 all\_kinds\_of\_test 🎉
+# 🎉 all_kinds_of_test 🎉
 
----
+Welcome to **all_kinds_of_test**! This repository contains various experimental projects and code snippets, including a custom GPT-2 model training implementation! 🚀
 
-Welcome to **all\_kinds\_of\_test**! This repository is currently a bit of a digital attic – a place where all sorts of experimental code, personal test projects, and miscellaneous snippets have landed. 🗑️
+## Project Structure 📁
 
-While it might seem like a chaotic mess right now, the idea is to eventually sort through everything and give each deserving project its own dedicated space. Think of it as a temporary staging ground for future, more organized repositories. 🚀
+### baka_gpt/ 🤖
+A custom implementation of GPT-2 model training and text generation.
 
-## What's Inside? 📦
+- `train.py` - Train a custom GPT-2 model on your data
+- `gen.py` - Generate text using the trained model
+- `chat.py` - Interactive chat interface with the model
+- `data/` - Training data directory
+- `tiny-gpt/` - Trained model checkpoints and configurations
 
-You'll find a wide variety of "treasures" (and maybe some "trash" too!) here. This could include:
-
-* **Small scripts:** Tiny Python, JavaScript, or shell scripts for specific tasks.
-* **Proof-of-concept code:** Early explorations of new libraries, APIs, or algorithms.
-* **Learning exercises:** Code written while learning a new language or framework.
-* **Random experiments:** Just about anything that doesn't fit neatly elsewhere!
-
-## Examples of What You *Might* Find 💡
-
-```python
-# A quick Python script to say hello
-def greet(name):
-    return f"Hello, {name}! 👋"
-
-print(greet("World"))
+#### Usage:
+1. Install dependencies:
+```bash
+pip install -r baka_gpt/requirements.txt
 ```
 
-```javascript
-// A simple JavaScript function for adding numbers
-function add(a, b) {
-    return a + b;
-}
-
-console.log(add(5, 3)); // Output: 8
+2. Train the model:
+```bash
+python baka_gpt/train.py
 ```
 
-## How You Can Help (If You're Feeling Brave!) 🤝
+3. Generate text:
+```bash
+python baka_gpt/gen.py
+```
 
-If you're ever looking for a fun challenge or want to contribute to some digital spring cleaning, feel free to dive in! Here are a few ideas:
+4. Chat with the model:
+```bash
+python baka_gpt/chat.py
+```
 
-1.  **Identify worthy projects:** Spot a gem that deserves its own repository? Let us know!
-2.  **Suggest categorization:** Have ideas on how to group similar files?
-3.  **Refactor or improve:** See a quick win for code improvement?
+### baka/ 🧪
+Collection of experimental Python scripts:
+- `main.py` - Text generation using distilgpt2
+- `main2.py`, `main3.py`, `main4.py` - Various experimental implementations
+
+## Features ✨
+
+- Custom GPT-2 model training
+- Text generation capabilities
+- Interactive chat interface
+- Experimental implementations
+- Support for custom training data
+
+## Technical Details 🔧
+
+The GPT-2 implementation includes:
+- Model architecture: GPT-2 (small)
+- Training parameters:
+  - Epochs: 5
+  - Batch size: 2
+  - Sequence length: 128
+  - Embedding dimension: 128
+  - Layers: 2
+  - Attention heads: 2
+
+## How to Contribute 🤝
+
+1. **Identify worthy projects:** Spot a gem that deserves its own repository
+2. **Suggest improvements:** Have ideas for better implementations?
+3. **Add features:** Want to extend the functionality?
 
 ---
 
-This README will evolve as the repository gets tidied up. Stay tuned for a more organized future! 🌟
-
----
-
-Happy exploring (and organizing)! 🧹
+Happy coding! 🌟
