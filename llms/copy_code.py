@@ -3,7 +3,8 @@ from langchain_groq import ChatGroq
 from langchain.agents import AgentExecutor, create_react_agent, Tool
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.tools import DuckDuckGoSearchRun
-
+from dotenv import load_dotenv
+load_dotenv()
 # --- Configuration ---
 # Set your Groq API key as an environment variable
 # For macOS/Linux: export GROQ_API_KEY='your-api-key'
