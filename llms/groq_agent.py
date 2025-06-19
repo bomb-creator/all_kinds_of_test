@@ -1,16 +1,12 @@
 import os
+from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain.agents import AgentExecutor, create_react_agent, Tool
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.tools import DuckDuckGoSearchRun
 
-# --- Configuration ---
-# Set your Groq API key as an environment variable
-# For macOS/Linux: export GROQ_API_KEY='your-api-key'
-# For Windows: set GROQ_API_KEY=your-api-key
-#
-# Or, uncomment the line below and replace with your key (not recommended for production)
-# os.environ['GROQ_API_KEY'] = 'YOUR_GROQ_API_KEY_HERE'
+# Load environment variables from .env file
+load_dotenv()
 
 def create_crypto_price_agent():
     """
@@ -31,12 +27,17 @@ def create_crypto_price_agent():
     # 2. Define the LLM to use
     # This now uses ChatGroq. Ensure GROQ_API_KEY is set in your environment.
     try:
+        # Get API key from .env file
+        api_key = os.getenv('GROQ_API_KEY')
+        if not api_key:
+            raise ValueError("GROQ_API_KEY not found in .env file")
+            
         # We are using Llama 3 via Groq, which is known for its speed.
         # You can explore other models available on the Groq platform.
         llm = ChatGroq(temperature=0, model_name="llama3-8b-8192")
     except Exception as e:
         print(f"Error initializing ChatGroq: {e}")
-        print("Please ensure the GROQ_API_KEY environment variable is set correctly.")
+        print("Please ensure the GROQ_API_KEY is properly set in your .env file.")
         return None
 
     # 3. Define the prompt template with correct formatting
